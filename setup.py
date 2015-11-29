@@ -1,4 +1,5 @@
 from os.path import dirname, isdir, join
+from shutil import rmtree
 
 from pkg_resources import DistributionNotFound, load_entry_point, working_set
 from setuptools import find_packages, setup
@@ -21,6 +22,9 @@ meta = dict(
     setup_requires=['setuptools_scm'],
     entry_points={ENTRY_GROUP: ENTRY_POINT},
 )
+
+# Clean up first, old eggs seem to confuse setuptools_scm
+rmtree(meta['name']+'.egg-info', ignore_errors=True)
 
 # Bootstrap
 if not isdir('.git'):
