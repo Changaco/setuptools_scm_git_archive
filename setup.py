@@ -5,6 +5,7 @@ from setuptools import find_packages, setup
 
 
 ENTRY_GROUP = 'setuptools_scm.parse_scm'
+ENTRY_GROUP_FALLBACK = 'setuptools_scm.parse_scm_fallback'
 ENTRY_NAME = '.git_archival.txt'
 ENTRY_POINT = ENTRY_NAME + ' = setuptools_scm_git_archive:parse'
 
@@ -19,7 +20,10 @@ meta = dict(
     long_description=open(join(dirname(__file__), 'README.rst')).read(),
     keywords='scm vcs version tags git archive',
     setup_requires=['setuptools_scm'],
-    entry_points={ENTRY_GROUP: ENTRY_POINT},
+    entry_points={
+        ENTRY_GROUP: ENTRY_POINT,
+        ENTRY_GROUP_FALLBACK: ENTRY_POINT,
+    },
 )
 
 # Bootstrap
