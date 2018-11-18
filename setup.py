@@ -19,7 +19,7 @@ meta = dict(
     packages=find_packages(),
     long_description=open(join(dirname(__file__), 'README.rst')).read(),
     keywords='scm vcs version tags git archive',
-    setup_requires=['setuptools_scm'],
+    setup_requires=['setuptools-scm'],
     entry_points={
         ENTRY_GROUP: ENTRY_POINT,
         ENTRY_GROUP_FALLBACK: ENTRY_POINT,
