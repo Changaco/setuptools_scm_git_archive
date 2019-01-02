@@ -12,7 +12,7 @@ def archival_to_version(data):
     trace('data', data)
     versions = tags_to_versions(tag_re.findall(data.get('ref-names', '')))
     if versions:
-        return meta(next(versions))
+        return meta(versions[0])
 
 
 def parse(root):
