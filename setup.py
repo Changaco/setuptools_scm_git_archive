@@ -1,4 +1,5 @@
-from os.path import join, dirname
+from os.path import dirname, join
+from shutil import rmtree
 
 from pkg_resources import DistributionNotFound, load_entry_point, working_set
 from setuptools import find_packages, setup
@@ -25,6 +26,9 @@ meta = dict(
         ENTRY_GROUP_FALLBACK: ENTRY_POINT,
     },
 )
+
+# Clean up first, old eggs seem to confuse setuptools_scm
+rmtree(meta['name']+'.egg-info', ignore_errors=True)
 
 # Bootstrap
 try:
