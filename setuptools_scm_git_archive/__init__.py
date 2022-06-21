@@ -1,9 +1,15 @@
 from os.path import join
 import re
+import warnings
 
 from setuptools_scm import Configuration
 from setuptools_scm.utils import data_from_mime, trace
 from setuptools_scm.version import meta, tags_to_versions
+
+
+warnings.warn(DeprecationWarning(
+    "This plugin is obsolete. setuptools_scm >= 7.0.0 supports Git archives by itself."
+))
 
 
 tag_re = re.compile(r'(?<=\btag: )([^,]+)\b')

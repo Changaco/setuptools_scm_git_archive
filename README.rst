@@ -1,3 +1,5 @@
+**This plugin is obsolete. ``setuptools_scm >= 7.0.0`` supports Git archives by itself.**
+
 This is a `setuptools_scm <https://pypi.python.org/pypi/setuptools_scm>`_ plugin
 that adds support for git archives (for example the ones GitHub automatically
 generates).
