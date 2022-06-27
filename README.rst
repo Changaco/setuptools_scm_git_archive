@@ -9,7 +9,7 @@ Change the contents of the ``.git_archival.txt`` file in the root directory of y
 
 to::
 
-    ref-names: $Format:%(describe)s$
+    ref-names: $Format:%(describe)$
 
 Remove ``setuptools_scm_git_archive`` from your project's dependencies (e.g. the
 ``setup_requires`` list in your ``setup.py`` file).
