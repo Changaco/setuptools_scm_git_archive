@@ -11,7 +11,7 @@ to::
 
     node: $Format:%H$
     node-date: $Format:%cI$
-    describe-name: $Format:%(describe)$
+    describe-name: $Format:%(describe:tags=true)$
     ref-names: $Format:%D$
 
 Remove ``setuptools_scm_git_archive`` from your project's dependencies (e.g. the
