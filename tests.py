@@ -1,6 +1,7 @@
 import pytest
-from setuptools_scm import format_version
+from setuptools_scm.version import format_version
 from setuptools_scm_git_archive import archival_to_version
+from setuptools_scm import Configuration
 
 
 git_archival_mapping = {
@@ -12,8 +13,9 @@ git_archival_mapping = {
 
 @pytest.mark.parametrize('expected,data', sorted(git_archival_mapping.items()))
 def test_archival_to_version(expected, data):
-    version = archival_to_version(data)
-    assert format_version(
-        version,
-        version_scheme='guess-next-dev',
-        local_scheme='node-and-date') == expected
+    config = Configuration(
+        version_scheme="guess-next-dev", local_scheme="node-and-date"
+    )
+    version = archival_to_version(data, config=config)
+    assert version is not None
+    assert format_version(version) == expected
